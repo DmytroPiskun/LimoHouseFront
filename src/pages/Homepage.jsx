@@ -1,5 +1,6 @@
 import React from "react";
+import Greeting from "../components/Greeting/Greeting";
 
 export default function Homepage() {
-  return <div>Homepage</div>;
+  return <Greeting></Greeting>;
 }
