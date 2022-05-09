@@ -29,6 +29,10 @@ export const styles = {
         justifyContent: 'center',
         flexDirection: 'column',
         alignItems: 'center',
+        marginTop: '100px',
+        [theme.breakpoints.up('md')]: {
+            marginTop: '200px'
+        },
     },
     image: {
         width: '100%',
@@ -47,16 +51,19 @@ export const MUIStyles = {
         font: 'Oregano',
         fontStyle: 'normal',
         fontWeight: '400',
-        fontSize: '3vh',
+        fontSize: '35px',
+        textAlign: 'center',
+        maxWidth: '300px',
         lineHeight: '120.97%',
         letterSpacing: '0.11em',
         textShadow: '2px 2px 1px #000000',
-        mb: "30px",
         [theme.breakpoints.up('md')]: {
-            fontSize: '6vh'
+            maxWidth: '770px',
+            fontSize: '55px'
+        },
+        [theme.breakpoints.up('lg')]: {
+            maxWidth: '990px',
+            fontSize: '70px',
         }
     },
-    with: {
-
-    }
 }

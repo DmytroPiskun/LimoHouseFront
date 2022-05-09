@@ -17,6 +17,7 @@ export default function Greeting() {
       className={classes.root}
       initial="hidden"
       whileInView="vissible"
+      viewport={{ once: true }}
     >
       <motion.div className={classes.textBlock}>
         <Typography
