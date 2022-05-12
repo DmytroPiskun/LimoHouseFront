@@ -47,8 +47,8 @@ export const styles = {
 
 export const MUIStyles = {
     text: {
-        fontFamily: 'Oregano',
-        font: 'Oregano',
+        fontFamily: 'Abhaya Libre',
+        font: "Abhaya Libre",
         fontStyle: 'normal',
         fontWeight: '400',
         fontSize: '35px',

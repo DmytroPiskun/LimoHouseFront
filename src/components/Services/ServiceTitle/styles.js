@@ -6,7 +6,6 @@ export const styles = {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        borderBottom: '2px solid black',
         borderTop: '2px solid black',
     },
 }
@@ -30,7 +29,7 @@ export const MUIStyles = {
             height: "8px",
             background: '#FFFF00',
             left: "95%",
-            top: "50%",
+            top: "45%",
             position: "absolute",
         },
         "&:after": {
@@ -42,7 +41,7 @@ export const MUIStyles = {
             height: "8px",
             background: '#FFFF00',
             right: "95%",
-            top: "50%",
+            top: "45%",
             position: "absolute",
         },
         [theme.breakpoints.up('sm')]: {
@@ -55,7 +54,7 @@ export const MUIStyles = {
                 height: "8px",
                 background: '#FFFF00',
                 left: "100%",
-                top: "50%",
+                top: "45%",
                 position: "absolute",
             },
             "&:after": {
@@ -67,7 +66,7 @@ export const MUIStyles = {
                 height: "8px",
                 background: '#FFFF00',
                 right: "100%",
-                top: "50%",
+                top: "45%",
                 position: "absolute",
             },
         },
@@ -82,7 +81,7 @@ export const MUIStyles = {
                 height: "8px",
                 background: '#FFFF00',
                 left: "100%",
-                top: "50%",
+                top: "45%",
                 position: "absolute",
             },
             "&:after": {
@@ -94,7 +93,7 @@ export const MUIStyles = {
                 height: "8px",
                 background: '#FFFF00',
                 right: "100%",
-                top: "50%",
+                top: "45%",
                 position: "absolute",
             },
         }
