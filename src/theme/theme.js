@@ -10,5 +10,6 @@ export const theme = createTheme({
             lg: 992,
             xl: 1300,
         }
-    }
+    },
+    direction: 'ltr'
 })

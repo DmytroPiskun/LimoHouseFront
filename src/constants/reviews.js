@@ -1,0 +1,21 @@
+import { v4 as uuidv4 } from 'uuid';
+
+const reviewList = [
+    {
+        id: uuidv4(),
+        name: 'Essential Laser',
+        text: "Perfect and luxury level company. I rented lux bentley in a mint condition for my trip to new york,in and out .all  demands were approved and the driver Robert really did a great job.Special thanks to Alex  for taking care of our route plans...   If you visit New York add ride from Brooklyn- limo   to your list to do highly recommended",
+    },
+    {
+        id: uuidv4(),
+        name: 'Essential Laser',
+        text: "Perfect and luxury level company. I rented lux bentley in a mint condition for my trip to new york,in and out .all  demands were approved and the driver Robert really did a great job.Special thanks to Alex  for taking care of our route plans...   If you visit New York add ride from Brooklyn- limo   to your list to do highly recommended",
+    },
+    {
+        id: uuidv4(),
+        name: "Essential Laser",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in facilisis lacus, nec auctor lacus. Aliquam et lacus rutrum, imperdiet ligula vel, dictum nunc. Curabitur vitae quam sit amet nibh molestie sagittis et a eros. Etiam ut mi dolor. Suspendisse in lobortis eros. Ut eu quam bibendum, iaculis dui sit amet, convallis lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sed mollis mauris. Cras ut convallis quam, non sollicitudin lorem. Sed et nisl tellus. Duis ex neque, laoreet ut ante ullamcorper, vehicula semper nibh. Vestibulum laoreet, quam sed tristique viverra, ex risus volutpat dui, at varius metus orci laoreet purusDonec rutrum libero nunc, elementum viverra odio volutpat bibendum. Proin consequat purus eu velit venenatis, et dignissim dolor malesuada. Suspendisse mollis nec ipsum eu accumsan. Etiam aliquam est consectetur laoreet feugiat. Vivamus pretium elementum nulla, facilisis aliquet nisl rhoncus id. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur ut nunc eu tellus vulputate vestibulum quis eu velit. Aliquam erat volutpat. Phasellus condimentum nibh sed tellus efficitur, nec scelerisque ligula sodales. Etiam in dignissim nibh, nec aliquet turpis.  Proin pellentesque orci ut tellus blandit hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius gravida lorem, at volutpat libero pharetra vitae. In vitae tincidunt ipsum, volutpat bibendum ligula. Etiam ac mattis quam. Cras eu eros euismod, bibendum lorem sed, scelerisque dui. Etiam sed lobortis mi, nec hendrerit dolor. Cras eleifend urna eu eros sagittis, lacinia convallis sem vestibulum. Phasellus at arcu vulputate, consequat lectus nec, egestas sem. Cras cursus diam a dui scelerisque, malesuada elementum leo cursus. In feugiat faucibus velit, a accumsan erat. Ut cursus hendrerit est, sed interdum sapien tristique vel. Nulla facilisi. Proin ut ipsum feugiat, dictum ligula quis, congue sapien.     Phasellus scelerisque placerat nunc ut ornare. Sed non odio vitae lacus imperdiet faucibus sed eu lectus. Nam suscipit, augue nec sollicitudin varius, nulla lorem dapibus tortor, nec scelerisque risus sapien at nulla. Sed in varius quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse tincidunt, felis id mattis tincidunt, nisl magna semper sem, non laoreet sem sapien in purus. Integer arcu dolor, elementum sit amet orci ac, fringilla ultricies orci. Duis mattis mattis turpis, vel maximus ligula tempor vel. Donec imperdiet lorem a turpis mattis pretium. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque augue risus, bibendum ut aliquam ac, iaculis sit amet lorem.Sed in sapien odio. Praesent non sollicitudin magna, ut dictum mauris. Curabitur fringilla et magna id luctus. Mauris a tempus purus. Sed pellentesque aliquam velit ultricies feugiat. Sed orci lectus, ultricies eget vehicula et, viverra vitae augue. Suspendisse potenti. Aliquam erat volutpat. Donec tincidunt nunc ipsum, id molestie lacus sodales at. Etiam lobortis euismod auctor. Phasellus eu lorem dignissim, vulputate elit ac, efficitur enim. Etiam porttitor rhoncus metus, quis pellentesque nibh.",
+    },
+]
+
+export default reviewList

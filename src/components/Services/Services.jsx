@@ -14,7 +14,16 @@ import party_img from "../../images/services/party.svg";
 import hourly_img from "../../images/services/time.svg";
 import casino_img from "../../images/services/casino.svg";
 
-import { air_service_desc } from "../../constants/servicesDesctiption";
+import {
+  air_service_desc,
+  bizz_service_desc,
+  bus_sevice_desc,
+  party_service_desc,
+  wedding_service_desc,
+  prom_service_desc,
+  hourly_sevice_desc,
+  casino_sevice_desc,
+} from "../../constants/servicesDesctiption";
 
 export default function Services() {
   const xsGridSise = 12;
@@ -26,13 +35,7 @@ export default function Services() {
     <>
       <ServicesTitle />
       <div className={classes.root}>
-        <Grid
-          container
-          spacing={0}
-          direction=""
-          alignItems="center"
-          justifyContent="center"
-        >
+        <Grid container spacing={0} alignItems="center" justifyContent="center">
           <Grid
             className={classes.gridContainer}
             item
@@ -60,7 +63,7 @@ export default function Services() {
             <ServiceCard
               seviceTitle={"Business Limo Service"}
               image={bizz_img}
-              serviceDescription={"business service"}
+              serviceDescription={bizz_service_desc}
             />
           </Grid>
           <Grid
@@ -75,7 +78,7 @@ export default function Services() {
             <ServiceCard
               seviceTitle={"Wedding Limo Service"}
               image={wedding_img}
-              serviceDescription={"wedding service"}
+              serviceDescription={wedding_service_desc}
             />
           </Grid>
           <Grid
@@ -90,7 +93,7 @@ export default function Services() {
             <ServiceCard
               seviceTitle={"Party Bus Service"}
               image={bus_img}
-              serviceDescription={"bus service"}
+              serviceDescription={bus_sevice_desc}
             />
           </Grid>
           <Grid
@@ -105,7 +108,7 @@ export default function Services() {
             <ServiceCard
               seviceTitle={"Prom Limo Service"}
               image={prom_img}
-              serviceDescription={"prom service"}
+              serviceDescription={prom_service_desc}
             />
           </Grid>
           <Grid
@@ -120,7 +123,7 @@ export default function Services() {
             <ServiceCard
               seviceTitle={"Party Limo Service"}
               image={party_img}
-              serviceDescription={"party service"}
+              serviceDescription={party_service_desc}
             />
           </Grid>
           <Grid
@@ -135,7 +138,7 @@ export default function Services() {
             <ServiceCard
               seviceTitle={"Hourly Limo Service"}
               image={hourly_img}
-              serviceDescription={"hourly service"}
+              serviceDescription={hourly_sevice_desc}
             />
           </Grid>
           <Grid
@@ -150,7 +153,7 @@ export default function Services() {
             <ServiceCard
               seviceTitle={"Casino Limo Service"}
               image={casino_img}
-              serviceDescription={"casino service"}
+              serviceDescription={casino_sevice_desc}
             />
           </Grid>
         </Grid>

@@ -31,7 +31,7 @@ export const styles = {
     cardImage: {
         maxWidth: '300px',
         maxHeight: '225px',
-        boxShadow: "0px -3px 10px 0px rgba(0, 0, 0, 0.5)",
+        boxShadow: "0px -1px 10px 0px rgba(0, 0, 0, 0.5)",
         borderRadius: "45px",
         padding: '10px',
         [theme.breakpoints.up('md')]: {
@@ -58,6 +58,10 @@ export const styles = {
         fontWight: 'bold',
         color: 'black',
         textAlign: 'center',
+        marginTop: '40px',
+        [theme.breakpoints.up('md')]: {
+            marginTop: '60px'
+        }
     }
 }
 
