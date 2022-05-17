@@ -13,7 +13,10 @@ export const styles = {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-        minHeight: '850px',
+        minHeight: '450px',
+        [theme.breakpoints.up('md')]: {
+            minHeight: '850px'
+        }
     }
 }
 
