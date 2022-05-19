@@ -1,5 +1,5 @@
-import { Typography } from "@mui/material";
 import React, { useState } from "react";
+import { Typography } from "@mui/material";
 import reviewList from "../../../constants/reviews";
 import LetteredAvatar from "react-lettered-avatar";
 import { styles, MUIStyles } from "./styles";

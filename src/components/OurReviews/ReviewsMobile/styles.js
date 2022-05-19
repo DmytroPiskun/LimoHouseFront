@@ -1,12 +1,21 @@
+import { theme } from "../../../theme/theme"
+
 export const styles = {
     sliderContainer: {
         maxWidth: "300px",
         minWidth: "300px",
-        height: "500px",
+        minHeight: "500px",
+        maxHeight: "500px",
         position: "relative",
         overflow: "hidden",
         margin: "100px auto 0",
         marginTop: "-20px",
+        [theme.breakpoints.up('md')]: {
+            maxWidth: "750px",
+            minWidth: "750px",
+            minHeight: "300px",
+            maxHeight: "300px",
+        }
     },
     reviewBox: {
         padding: '20px',

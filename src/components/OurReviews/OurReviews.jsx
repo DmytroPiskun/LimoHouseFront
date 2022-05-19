@@ -6,7 +6,6 @@ import { styles, MUIStyles } from "./styles";
 import useClasses from "../../utils/useClasses";
 
 import ReviewsMob from "./ReviewsMobile/ReviewsMob";
-import ReviewsTab from "./ReviewsTablet/ReviewsTab";
 import ReviewsDesk from "./ReviewsDesktop/ReviewsDesk";
 
 export default function OurReviews() {
@@ -24,7 +23,7 @@ export default function OurReviews() {
       </div>
       <div className={classes.reviews}>
         {media === "mobile" && <ReviewsMob />}
-        {media === "tablet" && <ReviewsTab />}
+        {media === "tablet" && <ReviewsMob />}
         {media === "desktop" && <ReviewsDesk />}
       </div>
     </>
