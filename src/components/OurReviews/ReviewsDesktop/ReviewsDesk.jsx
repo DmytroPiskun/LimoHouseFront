@@ -25,6 +25,7 @@ export default function ReviewsDesk() {
       setSlideIndex(reviewList.length);
     }
   };
+
   return (
     <div className={classes.root}>
       <div className={classes.sliderContainer}>
@@ -57,9 +58,6 @@ export default function ReviewsDesk() {
 
         <SliderButton moveSlide={nextSlide} direction={"next"} />
         <SliderButton moveSlide={prevSlide} direction={"prev"} />
-      </div>
-      <div>
-        <p> gallery </p>
       </div>
     </div>
   );

@@ -4,8 +4,8 @@ export const styles = {
     sliderContainer: {
         maxWidth: "300px",
         minWidth: "300px",
-        minHeight: "500px",
-        maxHeight: "500px",
+        minHeight: "800px",
+        maxHeight: "800px",
         position: "relative",
         overflow: "hidden",
         margin: "100px auto 0",
@@ -37,8 +37,12 @@ export const styles = {
     },
     reviewTextBlock: {
         marginTop: '20px',
-        maxHeight: 230,
+        minHeight: '300px',
+        maxHeight: "300px",
         overflowY: "scroll",
+        "::-webkit-scrollbar": {
+            width: "0px",
+        },
     },
     slideButton: {
         background: "#FFFFFF",

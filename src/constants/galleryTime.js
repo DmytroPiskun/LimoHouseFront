@@ -1,0 +1,1 @@
+export const galleySwitchTime = 5000
