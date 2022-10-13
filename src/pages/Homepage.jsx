@@ -9,8 +9,8 @@ export default function Homepage() {
     <>
       <Greeting />
       <Services />
-      {/* <Fleet /> */}
       <AboutUs />
+      <Fleet />
     </>
   );
 }
