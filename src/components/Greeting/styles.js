@@ -9,7 +9,6 @@ export const styles = {
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         height: '100vh',
-        minHeight: '885px',
         width: '100%',
         display: 'flex',
         justifyContent: 'center',

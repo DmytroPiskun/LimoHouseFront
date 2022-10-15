@@ -26,19 +26,19 @@ export const Carousel = ({ children }) => {
     setActiveIdx(newIdx);
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!paused) {
-        updateIdx(activeIdx + 1);
-      }
-    }, galleySwitchTime);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     if (!paused) {
+  //       updateIdx(activeIdx + 1);
+  //     }
+  //   }, galleySwitchTime);
 
-    return () => {
-      if (interval) {
-        clearInterval(interval);
-      }
-    };
-  });
+  //   return () => {
+  //     if (interval) {
+  //       clearInterval(interval);
+  //     }
+  //   };
+  // });
   const handlers = useSwipeable({
     onSwipedLeft: () => updateIdx(activeIdx + 1),
     onSwipedRight: () => updateIdx(activeIdx - 1),
@@ -59,9 +59,8 @@ export const Carousel = ({ children }) => {
         })}
       </div>
       <div className={classes.indicators}>
-        {/* buttons are inactive  */}
-
-        {/* <button
+        <button
+          className={classes.buttonStyled}
           onClick={() => {
             updateIdx(activeIdx - 1);
           }}
@@ -69,12 +68,13 @@ export const Carousel = ({ children }) => {
           prev
         </button>
         <button
+          className={classes.buttonStyled}
           onClick={() => {
             updateIdx(activeIdx + 1);
           }}
         >
           next
-        </button> */}
+        </button>
       </div>
     </div>
   );
