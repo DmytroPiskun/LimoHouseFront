@@ -2,8 +2,8 @@ import { theme } from "../../theme/theme";
 
 export const styles = {
     root: {
-        minHeight: 600,
         padding: '12px',
+        marginBottom: '20px',
     },
     fleetWrapper: {
         display: 'flex',
