@@ -12,7 +12,9 @@ export const styles = {
         }
     },
     pic: {
-        width: '100%',
+        [theme.breakpoints.down('lg')]: {
+            width: '100%',
+        },
         "::-webkit-touch-callout": "none",
         "::-webkit-user-select": "none",
         "::-khtml-user-select": "none",
