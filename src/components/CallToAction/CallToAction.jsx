@@ -4,13 +4,18 @@ import useClasses from "../../utils/useClasses";
 import { Button, Typography } from "@mui/material";
 import call from "../../images/call.svg";
 import location from "../../images/location.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function CallToAction() {
+  const navigate = useNavigate();
   const classes = useClasses(styles);
   return (
     <div className={classes.root}>
       <div className={classes.contactUs}>
         <Button
+          onClick={() => {
+            navigate("/reserve");
+          }}
           sx={[
             MUIStyles.buttonStyles,
             { color: "white", backgroundColor: "#4d0000" },
