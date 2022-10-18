@@ -1,5 +1,3 @@
-import { theme } from "../../theme/theme";
-
 export const styles = {
     root: {
         padding: '12px',

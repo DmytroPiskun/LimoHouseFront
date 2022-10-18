@@ -26,19 +26,19 @@ export const Carousel = ({ children }) => {
     setActiveIdx(newIdx);
   };
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     if (!paused) {
-  //       updateIdx(activeIdx + 1);
-  //     }
-  //   }, galleySwitchTime);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!paused) {
+        updateIdx(activeIdx + 1);
+      }
+    }, galleySwitchTime);
 
-  //   return () => {
-  //     if (interval) {
-  //       clearInterval(interval);
-  //     }
-  //   };
-  // });
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  });
   const handlers = useSwipeable({
     onSwipedLeft: () => updateIdx(activeIdx + 1),
     onSwipedRight: () => updateIdx(activeIdx - 1),
