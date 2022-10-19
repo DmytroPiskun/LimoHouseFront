@@ -1,0 +1,2 @@
+export const creditCards = ["Cash", "Visa", "Master Card", "American Express", "Discover Card"]
+export const locations = ["Manhattan", "Queens", "Bronx", "Staten island", "New York State", "New Jersey", "Connecticut", "Pennsylvania", "JFK Airport", "LA Guardia Airport", "Newark Airport"]

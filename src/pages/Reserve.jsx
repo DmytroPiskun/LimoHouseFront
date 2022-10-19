@@ -3,7 +3,7 @@ import ReservationForm from "../components/ReservationForm/ReservationForm";
 
 export default function Reserve() {
   return (
-    <div>
+    <div style={{ display: "flex", justifyContent: "center" }}>
       <ReservationForm />
     </div>
   );
