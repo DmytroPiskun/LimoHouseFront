@@ -21,10 +21,6 @@ export const styles = {
             backgroundPosition: 'center',
             alignItems: 'center',
         },
-        stepIcon: {
-            color: "black",
-            opacity: 0.8,
-        },
     }
 }
 export const MUIStyles = {

@@ -3,11 +3,8 @@ import { Formik, Form } from "formik";
 import { Button, Step, StepLabel } from "@mui/material";
 import { Stepper } from "@mui/material";
 import { Box } from "@mui/system";
-import useClasses from "../../utils/useClasses";
-import { styles } from "./styles";
 
 export function FormikStepper({ children, ...props }) {
-  const classes = useClasses(styles);
   const childrenArray = React.Children.toArray(children);
   const [step, setStep] = React.useState(0);
   const currentChildren = childrenArray[step];
