@@ -11,5 +11,18 @@ export const theme = createTheme({
             xl: 1300,
         }
     },
-    direction: 'ltr'
+    overrides: {
+        MuiStepIcon: {
+            root: {
+                '&$completed': {
+                    color: 'pink',
+                },
+                '&$active': {
+                    color: 'red',
+                },
+            },
+            active: {},
+            completed: {},
+        },
+    }
 })

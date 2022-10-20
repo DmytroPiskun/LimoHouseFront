@@ -3,8 +3,11 @@ import { Formik, Form } from "formik";
 import { Button, Step, StepLabel } from "@mui/material";
 import { Stepper } from "@mui/material";
 import { Box } from "@mui/system";
+import useClasses from "../../utils/useClasses";
+import { styles } from "./styles";
 
 export function FormikStepper({ children, ...props }) {
+  const classes = useClasses(styles);
   const childrenArray = React.Children.toArray(children);
   const [step, setStep] = React.useState(0);
   const currentChildren = childrenArray[step];
@@ -19,7 +22,7 @@ export function FormikStepper({ children, ...props }) {
         }
       }}
     >
-      <Form>
+      <Form autoComplete="off">
         <Box paddingBottom={2}>
           <Stepper alternativeLabel activeStep={step}>
             {childrenArray.map((child) => (
@@ -31,12 +34,17 @@ export function FormikStepper({ children, ...props }) {
         </Box>
 
         {currentChildren}
-        <Button onClick={() => setStep((step) => step - 1)} disabled={step < 1}>
-          Back
-        </Button>
-        <Button type="submit">
-          {step === childrenArray.length - 1 ? "Submit" : "Next"}
-        </Button>
+        <div>
+          <Button
+            onClick={() => setStep((step) => step - 1)}
+            disabled={step < 1}
+          >
+            Back
+          </Button>
+          <Button type="submit">
+            {step === childrenArray.length - 1 ? "Submit" : "Next"}
+          </Button>
+        </div>
       </Form>
     </Formik>
   );
