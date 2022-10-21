@@ -9,7 +9,7 @@ import { CheckboxWithLabel, TextField, Autocomplete } from "formik-mui";
 import axios from "axios";
 import { locations, creditCards } from "./autocompleteData";
 import schema from "./validation";
-import { FormikStepper } from "./FormikStepper";
+import { FormikStepper, FormikStep } from "./FormikStepper";
 import { Box } from "@mui/system";
 import { MUIStyles, styles } from "./styles";
 import useClasses from "../../utils/useClasses";
@@ -31,11 +31,12 @@ export default function ReservationForm() {
       <Card sx={MUIStyles.wrapper}>
         <CardContent>
           <FormikStepper
+            validationSchema={schema}
             initialValues={{
               vehicle: { title: "Pick you vehicle" },
               numberOfHours: 0,
               withPet: false,
-              weightOfPet: "",
+              weightOfPet: 0,
               pickUpLocation: "",
               pickUpAddress: "",
               pickUpDate: "",
@@ -59,7 +60,7 @@ export default function ReservationForm() {
               console.log("values", values);
             }}
           >
-            <div label="Choose Your Vehicle">
+            <FormikStep label="Choose Your Vehicle">
               <Box paddingBottom={2}>
                 <Field
                   type="text"
@@ -108,8 +109,8 @@ export default function ReservationForm() {
                   label="Weight of your pet"
                 />
               </Box>
-            </div>
-            <div label="Trip Info">
+            </FormikStep>
+            <FormikStep label="Trip Info">
               <Box paddingBottom={2}>
                 <Field
                   name="pickUpLocation"
@@ -134,11 +135,25 @@ export default function ReservationForm() {
                   component={TextField}
                   label="Pick up address OR flight details"
                 />
-                <Box paddingBottom={1} paddingTop={2}>
-                  <Field type="date" name="pickUpDate" component={TextField} />
-                </Box>
-                <Box paddingBottom={1}>
-                  <Field type="time" name="pickUpTime" component={TextField} />
+                <Box paddingBottom={2} paddingTop={2}>
+                  <Box paddingBottom={2}>
+                    <Field
+                      type="date"
+                      label="Pick up Date"
+                      InputLabelProps={{ shrink: true }}
+                      name="pickUpDate"
+                      component={TextField}
+                    />
+                  </Box>
+                  <Box>
+                    <Field
+                      type="time"
+                      label="Pick up Time"
+                      InputLabelProps={{ shrink: true }}
+                      name="pickUpTime"
+                      component={TextField}
+                    />
+                  </Box>
                 </Box>
               </Box>
               <Box paddingBottom={2}>
@@ -168,13 +183,13 @@ export default function ReservationForm() {
               </Box>
               <Box>
                 <Field
+                  sx={MUIStyles.paddings}
                   type="number"
                   name="passengers"
                   component={TextField}
                   label="Passengers"
                 />
-              </Box>
-              <Box paddingTop={2}>
+                <Box paddingBottom={2} />
                 <Field
                   type="number"
                   name="luggage"
@@ -182,8 +197,8 @@ export default function ReservationForm() {
                   label="Luggage"
                 />
               </Box>
-            </div>
-            <div label="Customer Info">
+            </FormikStep>
+            <FormikStep label="Customer Info">
               <Box paddingBottom={1}>
                 <Field
                   fullWidth
@@ -192,7 +207,7 @@ export default function ReservationForm() {
                   label="First name"
                 />
               </Box>
-              <Box paddingBottom={2}>
+              <Box paddingBottom={4}>
                 <Field
                   fullWidth
                   name="lastName"
@@ -200,16 +215,26 @@ export default function ReservationForm() {
                   label="Last name"
                 />
               </Box>
-              <Box paddingBottom={2}>
+              <Box paddingBottom={1}>
                 <Field
+                  fullWidth
                   type="phone"
                   name="phone"
                   component={TextField}
                   label="phone number"
                 />
               </Box>
-            </div>
-            <div label="Payment Info">
+              <Box>
+                <Field
+                  fullWidth
+                  type="email"
+                  name="email"
+                  component={TextField}
+                  label="your email"
+                />
+              </Box>
+            </FormikStep>
+            <FormikStep label="Payment Info">
               <Box paddingBottom={2}>
                 <Field
                   name="creditCard"
@@ -272,7 +297,7 @@ export default function ReservationForm() {
                   />
                 </Box>
               </>
-            </div>
+            </FormikStep>
           </FormikStepper>
         </CardContent>
       </Card>

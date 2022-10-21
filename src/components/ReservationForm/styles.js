@@ -25,6 +25,10 @@ export const styles = {
 }
 export const MUIStyles = {
     wrapper: {
+        padding: "50px",
+        [theme.breakpoints.down("md")]: {
+            padding: '10px',
+        },
         border: '1px solid black',
         borderRadius: "25px",
         boxShadow: "5px 5px 15px 5px #000000",

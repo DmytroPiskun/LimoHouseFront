@@ -46,3 +46,7 @@ export function FormikStepper({ children, ...props }) {
     </Formik>
   );
 }
+
+export function FormikStep({ children, ...props }) {
+  return <>{children}</>;
+}
