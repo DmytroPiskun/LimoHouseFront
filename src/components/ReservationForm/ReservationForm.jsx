@@ -7,8 +7,13 @@ import {
 import { Field } from "formik";
 import { CheckboxWithLabel, TextField, Autocomplete } from "formik-mui";
 import axios from "axios";
-import { locations, creditCards } from "./autocompleteData";
-import schema from "./validation";
+import { locations, creditCards, months, years } from "./autocompleteData";
+import {
+  vehicleSchema,
+  tripInfoSchema,
+  customerInfoSchema,
+  paymentSchema,
+} from "./validation";
 import { FormikStepper, FormikStep } from "./FormikStepper";
 import { Box } from "@mui/system";
 import { MUIStyles, styles } from "./styles";
@@ -31,7 +36,6 @@ export default function ReservationForm() {
       <Card sx={MUIStyles.wrapper}>
         <CardContent>
           <FormikStepper
-            validationSchema={schema}
             initialValues={{
               vehicle: { title: "Pick you vehicle" },
               numberOfHours: 0,
@@ -45,12 +49,13 @@ export default function ReservationForm() {
               pickUpTime: "",
               passengers: 0,
               luggage: 0,
-              fullName: "",
+              firstName: "",
               lastName: "",
               email: "",
               phone: "",
               creditCard: "",
-              expDate: "",
+              expYear: 0,
+              expMonth: "",
               nameOnCard: "",
               cardNumber: "",
               cv2Code: "",
@@ -60,7 +65,10 @@ export default function ReservationForm() {
               console.log("values", values);
             }}
           >
-            <FormikStep label="Choose Your Vehicle">
+            <FormikStep
+              label="Choose Your Vehicle"
+              validationSchema={vehicleSchema}
+            >
               <Box paddingBottom={2}>
                 <Field
                   type="text"
@@ -79,7 +87,6 @@ export default function ReservationForm() {
                   )}
                 />
               </Box>
-
               <Box paddingBottom={2}>
                 <Field
                   name="numberOfHours"
@@ -110,7 +117,7 @@ export default function ReservationForm() {
                 />
               </Box>
             </FormikStep>
-            <FormikStep label="Trip Info">
+            <FormikStep label="Trip Info" validationSchema={tripInfoSchema}>
               <Box paddingBottom={2}>
                 <Field
                   name="pickUpLocation"
@@ -198,7 +205,10 @@ export default function ReservationForm() {
                 />
               </Box>
             </FormikStep>
-            <FormikStep label="Customer Info">
+            <FormikStep
+              label="Customer Info"
+              validationSchema={customerInfoSchema}
+            >
               <Box paddingBottom={1}>
                 <Field
                   fullWidth
@@ -234,7 +244,7 @@ export default function ReservationForm() {
                 />
               </Box>
             </FormikStep>
-            <FormikStep label="Payment Info">
+            <FormikStep label="Payment Info" validationSchema={paymentSchema}>
               <Box paddingBottom={2}>
                 <Field
                   name="creditCard"
@@ -262,9 +272,10 @@ export default function ReservationForm() {
                 />
               </Box>
               <>
-                <Box paddingBottom={2}>
+                <Box paddingBottom={1}>
                   <Field
                     disabled={!isCard}
+                    fullWidth
                     type="text"
                     name="nameOnCard"
                     component={TextField}
@@ -273,19 +284,55 @@ export default function ReservationForm() {
                 </Box>
                 <Box paddingBottom={2}>
                   <Field
-                    disabled={!isCard}
                     type="text"
+                    fullWidth
+                    disabled={!isCard}
                     name="cardNumber"
                     component={TextField}
                     label="Card Number"
                   />
-                  <Field
-                    disabled={!isCard}
-                    name="expDate"
-                    component={TextField}
-                    label="Expire date"
-                    type="text"
-                  />
+                  <Box paddingTop={4}>
+                    <Field
+                      disabled={!isCard}
+                      name="expMonth"
+                      component={Autocomplete}
+                      options={months}
+                      isOptionEqualToValue={(opt, val) => {
+                        return opt.id === val.id;
+                      }}
+                      getOptionLabel={(option) => {
+                        return option;
+                      }}
+                      renderInput={(params) => (
+                        <MaterialUiTextFiels
+                          {...params}
+                          label="Card expire month"
+                        />
+                      )}
+                      label="Expire Month"
+                    />
+                  </Box>
+                  <Box paddingTop={2}>
+                    <Field
+                      disabled={!isCard}
+                      name="expYear"
+                      component={Autocomplete}
+                      options={years}
+                      isOptionEqualToValue={(opt, val) => {
+                        return opt.id === val.id;
+                      }}
+                      getOptionLabel={(option) => {
+                        return String(option);
+                      }}
+                      renderInput={(params) => (
+                        <MaterialUiTextFiels
+                          {...params}
+                          label="Card expire year"
+                        />
+                      )}
+                      label="Expire Month"
+                    />
+                  </Box>
                 </Box>
                 <Box paddingBottom={2}>
                   <Field

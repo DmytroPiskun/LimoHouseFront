@@ -11,6 +11,7 @@ export function FormikStepper({ children, ...props }) {
   return (
     <Formik
       {...props}
+      validationSchema={currentChildren.props.validationSchema}
       onSubmit={async (values, helpers) => {
         if (step === childrenArray.length - 1) {
           await props.onSubmit(values, helpers);
