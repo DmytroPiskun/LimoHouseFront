@@ -21,7 +21,6 @@ import useClasses from "../../utils/useClasses";
 
 export default function ReservationForm() {
   const classes = useClasses(styles);
-  const sleep = (time) => new Promise((acc) => setTimeout(acc, time));
   const [cars, setCars] = useState([]);
   const [isCard, setIsCard] = useState(false);
   const [isWithPet, setIsWithPet] = useState(false);
@@ -53,7 +52,7 @@ export default function ReservationForm() {
               lastName: "",
               email: "",
               phone: "",
-              creditCard: "",
+              creditCard: "Cash",
               expYear: 0,
               expMonth: "",
               nameOnCard: "",
@@ -61,8 +60,14 @@ export default function ReservationForm() {
               cv2Code: "",
             }}
             onSubmit={async (values) => {
-              await sleep(2000);
-              console.log("values", values);
+              axios
+                .post(`${process.env.REACT_APP_API}/reserve`, values)
+                .then(function (response) {
+                  console.log(response);
+                })
+                .catch(function (error) {
+                  console.log(error);
+                });
             }}
           >
             <FormikStep

@@ -19,7 +19,7 @@ export const tripInfoSchema = yup.object().shape({
     destinationAddress: yup.string().required("please let us know an adress of your destination"),
     pickUpTime: yup.string().required("this field is required"),
     passengers: yup.number().positive().required("this number cant be negative"),
-    luggage: yup.number().positive().required("this number cant be negative"),
+    luggage: yup.number().moreThan(-1, 'this value cannot be negative').required("this number cant be negative"),
 })
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 export const customerInfoSchema = yup.object().shape({
@@ -31,9 +31,30 @@ export const customerInfoSchema = yup.object().shape({
 
 export const paymentSchema = yup.object().shape({
     creditCard: yup.string().required("this field is required"),
-    nameOnCard: yup.string().required("this field is required"),
-    expYear: yup.number().required("this field is required"),
-    expMonth: yup.string().required("this field is required"),
-    cardNumber: yup.string().matches(/^\d+$/, "this field must have digits only").required("this field is required"),
-    cv2Code: yup.string("this field must be number").min(3, "invalid code").required("this field is required")
+    // nameOnCard: yup.string().required("this field is required"),
+    nameOnCard: yup.string().when("creditCard", {
+        is: 'Cash',
+        then: yup.string(),
+        else: yup.string().required('this field is required')
+    }),
+    expYear: yup.number().when("creditCard", {
+        is: 'Cash',
+        then: yup.number(),
+        else: yup.number().required("this field is required")
+    }),
+    expMonth: yup.string().when('creditCard', {
+        is: "Cash",
+        then: yup.string(),
+        else: yup.string().required("this field is required")
+    }),
+    cardNumber: yup.string().when('creditCard', {
+        is: "Cash",
+        then: yup.string(),
+        else: yup.string().matches(/^\d+$/, "this field must have digits only").required("this field is required"),
+    }),
+    cv2Code: yup.string().when('creditCard', {
+        is: "Cash",
+        then: yup.string(),
+        else: yup.string("this field must be number").min(3, "invalid code").required("this field is required")
+    })
 })
